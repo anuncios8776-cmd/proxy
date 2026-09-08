@@ -8,7 +8,7 @@ app = Flask(__name__)
 def get_audio():
     video_url = request.args.get('url')
     if not video_url:
-        return jsonify({'error': 'Falta la URL'}), 400
+        return jsonify({'success': False, 'error': 'Falta la URL'}), 400
 
     ydl_opts = {
         'format': 'bestaudio/best',
